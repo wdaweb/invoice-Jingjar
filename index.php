@@ -22,8 +22,8 @@
             ?>
             <div class="text-center"><?= "{$month[$m]}" ?></div>
             <div class="text-center"><a href="?do=invoice_list">當期發票</a></div>
-            <div class="text-center"><a href="">兌獎</a></div>
-            <div class="text-center"><a href="">輸入獎號</a></div>
+            <div class="text-center"><a href="?do=award_numbers">兌獎</a></div>
+            <div class="text-center"><a href="?do=add_awards">輸入獎號</a></div>
             <div class="text-center"><a href="index.php">回首頁</a></div>
         </div>
         <div class="col-sm12 col-lg8 d-flex justify-content-between p-3 mx-auto border">
