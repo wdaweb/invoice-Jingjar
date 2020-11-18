@@ -16,6 +16,6 @@
                     發票金額: <input class="col-5" type="number" name="payment">
                 </div>
                 <div>
-                <input type="submit" value="送出">
+                <input type="submit" class="btn btn-secondary" value="送出">
                 </div>
         </form>

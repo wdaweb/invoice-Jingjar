@@ -26,7 +26,7 @@
             <div class="text-center"><a href="?do=add_awards">輸入獎號</a></div>
             <div class="text-center"><a href="index.php">回首頁</a></div>
         </div>
-        <div class="col-sm12 col-lg8 d-flex justify-content-between p-3 mx-auto border">
+        <div class="col-sm12 col-lg8 d-flex flex-column justify-content-between p-3 mx-auto border">
             <?php
             if (isset($_GET['do'])) {
                 include "{$_GET['do']}.php";

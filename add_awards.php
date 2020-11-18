@@ -75,9 +75,10 @@
                 </tr>
 </div>
 </tbody>
+</table>
 <div class="text-center">
     <input type="submit" value="送出" class="btn btn-secondary">
     <input type="reset" value="重製" class="btn btn-secondary">
 </div>
-</table>
+
 </form>
