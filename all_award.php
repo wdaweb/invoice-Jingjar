@@ -11,6 +11,7 @@ $grand = "";
 $first = [];
 $six = [];
 $res = 0;
+$money=0;
 $Aawards=$pdo->query("select * from `invoices` where `period`='{$_GET['period']}' && left(date,4)='{$_GET['year']}' order by `date` desc")->fetchAll();
 foreach($Aawards as $Aaward){
     $number=$Aaward['number'];
@@ -20,12 +21,14 @@ foreach($Aawards as $Aaward){
             case 1:
                 if ($award[$i]['number'] == $number) {
                     $res = 1;
+                    $money=$money+10000000;
                     echo "號碼:" . $number . "中特別獎<br>";
                 }
-                break;
+            break;
             case 2:
                 if ($award[$i]['number'] == $number) {
                     $res = 1;
+                    $money=$money+2000000;
                     echo "號碼:" . $number . "中特獎<br>";
                 }
                 break;
@@ -37,6 +40,19 @@ foreach($Aawards as $Aaward){
                     $mynum = mb_substr($number, $j, (8 - $j), 'utf8');
 
                     if ($target == $mynum) {
+                        if($j==5){
+                            $money=$money+200;
+                        }elseif($j==4){
+                            $money=$money+1000;
+                        }elseif($j==3){
+                            $money=$money+4000;
+                        }elseif($j==2){
+                            $money=$money+10000;
+                        }elseif($j==1){
+                            $money=$money+40000;
+                        }else{
+                            $money=$money+200000;
+                        }
                         $res = 1;
                         $tmp = $a[$j];
                         // echo "<br>號碼:" . $mynum . "</br>中" . $a[$j] . "獎";
@@ -51,6 +67,7 @@ foreach($Aawards as $Aaward){
                 if ($award[$i]['number'] == mb_substr($number, 5, 3, 'utf8')) {
                     $res = 1;
                     echo "號碼:" . $number . "中增開六獎<br>";
+                    $money=$money+200;
                 }
                 break;
         }
@@ -60,5 +77,6 @@ foreach($Aawards as $Aaward){
    if ($res == 0) {
         echo '沒中';
     }
+    echo "中了:".$money."元";
 
 ?>
