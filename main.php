@@ -11,9 +11,9 @@ function err($field){
 }
 ?>
 <form action="worng.php" method="post">
-    <div>日期:<input style="margin:10px;" type="date" name="date"></div>
+    <div>日期:<input style="margin:10px;" type="date" name="date"><?php err('date');?></div>
     <div> 期別:
-        <select style="margin:10px;" name="period">
+        <select style="margin:10px;" name="period"><?php err('period');?>
             <option value="1">1~2</option>
             <option value="2">3~4</option>
             <option value="3">5~6</option>
@@ -23,9 +23,13 @@ function err($field){
         </select>
     </div>
     <div>號碼:<input style="display:inline-block;width:50px;margin:10px;" type="text" name="code">
-        <input type="number" name="number"> <?php err('number');?>
+        <input type="number" name="number"> 
     </div>
-    <div>金額:<input style="margin:10px;" type="number" name="payment"></div>
+    <div class="container row ">
+    <div class="align-items-start" style="margin:0 30px"><?php err('code');?></div>
+    <div><?php err('number');?></div>
+    </div>
+    <div>金額:<input style="margin:10px;" type="number" name="payment"><?php err('payment');?></div>
     <input type="submit" value="送出">
 
 </form>
